@@ -1,0 +1,11 @@
+<div class="search-component">
+    <h4><label for="search-box">Search</label></h4>
+    <input #name type="text" id="search-box" (input)="search(name.value)">
+
+    <ul class="search-result">
+        <!-- The $ is a convention that indicates heroes$ is an Observable, not an array. -->
+        <li *ngFor="let hero of heroes$ | async">
+            <a routerLink="/detail/{{hero.id}}">{{hero.name}}</a>
+        </li>
+    </ul>
+</div>
